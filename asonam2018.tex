@@ -65,21 +65,23 @@ making it challenging to provide in-depth analysis of current issues,
 topics and themes being discussed across various locations and
 jurisdictions. There is thus a demand for simple and extensible
 approaches to provide deeper insight into these trends and how they
-propagate across locales. Utilising graph structures, this paper presents
-an exploration of topical patterns of trends on Twitter across various regions. 
-It is based on a year-long data collection ({\emph{N}}=2,307,163) and
-analysis between 2016-2017 of seven Middle Eastern countries (Bahrain,
-Egypt, Kuwait, Lebanon, Qatar, Saudi Arabia, and the United Arab
-Emirates). Using this year-long dataset, the project identified two interesting 
-structures of topics; chains and trees. Trend topics that manufisted themselves
-in these structures found to represent ongoing concerns and interests. 
-The findings showing that.... 
+propagate across locales. Utilising graph structures, this paper
+presents an exploration of topical patterns of trends on Twitter
+across various regions. It is based on a year-long data collection
+({\emph{N}}=2,307,163) and analysis between 2016-2017 of seven Middle
+Eastern countries (Bahrain, Egypt, Kuwait, Lebanon, Qatar, Saudi
+Arabia, and the United Arab Emirates). Using this year-long dataset,
+the project identified two interesting structures of topics; chains
+and trees. Trend topics that manifested themselves in these structures
+found to represent ongoing concerns and interests.  The findings
+showing that....
 \end{abstract}
 
 \begin{IEEEkeywords}
 Trends, topic structures, topic-trees, topic-chains, network graphs, Twitter
 \end{IEEEkeywords}
 
+% need to update Intro from ICCCI
 \section{Introduction}\label{intro}
 
 With the huge daily volume of generated content on Twitter -- c.500
@@ -123,11 +125,12 @@ for trends analysis across various domains, customisable clustering
 tools that can be used by non-technical users have started to emerge,
 such as the recent example introduced in~\cite{Arn2018}.
 
+% need to update Methodology from ICCCI
 \section{Methodology}\label{method}
 
 The approach in this study consists of two main parts; graph construction
 and text analysis. First, {\emph{weighted base graph}} is constructed to 
-capture raw trends data in the form of country-trend relatioships. Trend 
+capture raw trends data in the form of country-trend relationships. Trend 
 texts are then used to generate ngrams, and another {\emph{derived graph}}
 is generated from these trend-ngram relationships. Different parts of these 
 two graphs are then merged to link countries to topics of interests.
@@ -163,7 +166,8 @@ possible to receive no information for tweet volume. For each
 location, the list of available trending topic is returned. From this
 list, two pieces of information are extracted from each trend record;
 {\emph{woeid}}: the Yahoo! Where On Earth ID (WOEID) of the location;
-{\emph{name}}: text of trending topic (e.g `{\texttt{\#Call\_For\_Action}}').
+{\emph{name}}: text of trending topic (e.g
+`{\texttt{\#Call\_For\_Action}}').
 
 
 While the Twitter API returns a list of trending topics for a specific
@@ -182,12 +186,12 @@ include any reference to this volume entity.
 
 \subsection{Weighed Base Graph Construction}
 
-This graph is a directed graph taht consists of two trend entities:
+This graph is a directed graph that consists of two trend entities:
 {\emph{place}} and {\emph{trend}}. Nodes represent places and
 trends, and are linked with {\emph{weighted}} edges. The feature 
 of weighted edges in this graph is used to measure the popularity 
 of trends, repetition rate, participation of countries, and the volume 
-of the engagement. Figrue~\ref{fig:basegraph} shows an example 
+of the engagement. Figure~\ref{fig:basegraph} shows an example 
 of such graph.
 
 \begin{figure}[htb] \centering
@@ -198,52 +202,61 @@ of such graph.
 
 
 \subsection{Text analysis and Ngraming}
-Trends exist in the form of phrases or hashtags. The main textual 
-difference between these is that hashtags appear as a connected 
-chain of characters with no whitespaces, while trending phrases include 
-spaces. To create a hashtag with more than one word, it must be possible 
-to distinguish the words while maintaining their connectivity, and Twitter 
-allows underscores to be used in multiple word hashtags. For languages 
-such as English, letter capitalisation is an additional popular option in social 
-media for hashtaging, such as \#ThisIsAnExample. However, languages 
-such as Arabic, Urdu, and Farsi, do not employ capitalisation in the same 
-way, therefore the only means of separating words is to use underscores. 
-The textual analysis in this study required the trend texts to be tokenized 
-to generate ngrams. This process was straightforward for the phrase trends, 
-although the hashtag trends included a number of variations that required 
-consideration during the textual processing. In capitalized English hashtags, 
-for example, it was unclear whether the capital letters referred to the 
-beginning of words or abbreviations. In contrast, Arabic hashtags use 
-underscores to separate words, which therefore make word separation an 
-easy and accurate task to accomplish. As the sample countries were from the 
-Arab region, it was anticipated that most tweeting activity would occur in the 
-Arabic language, since an earlier study demonstrated that 72\% of all tweets 
-in the Arab region are in Arabic [94]. 
 
-In this present study, the textual analysis accounted for underscores and spaces 
-only where they occurred as word separators. While this implied that capitalized 
-hashtags should be considered as a single word, this would not provide an accurate 
-analysis for this group of trends, but since Arabic trends were dominant in the dataset, 
-and only capitalized hashtags were affected, this was not anticipated to have an impact 
-on the results of the analysis.
+Trends exist in the form of phrases or hashtags. The main textual
+difference between these is that hashtags appear as a connected chain
+of characters with no whitespaces, while trending phrases include
+spaces. To create a hashtag with more than one word, it must be
+possible to distinguish the words while maintaining their
+connectivity, and Twitter allows underscores to be used in multiple
+word hashtags. For languages such as English, letter capitalisation is
+an additional popular option in social media for hashtagging, such as
+\#ThisIsAnExample. However, languages such as Arabic, Urdu, and Farsi,
+do not employ capitalisation in the same way, therefore the only means
+of separating words is to use underscores.  The textual analysis in
+this study required the trend texts to be tokenised to generate
+ngrams. This process was straightforward for the phrase trends,
+although the hashtag trends included a number of variations that
+required consideration during the textual processing. In capitalised
+English hashtags, for example, it was unclear whether the capital
+letters referred to the beginning of words or abbreviations. In
+contrast, Arabic hashtags use underscores to separate words, which
+therefore make word separation an easy and accurate task to
+accomplish. As the sample countries were from the Arab region, it was
+anticipated that most tweeting activity would occur in the Arabic
+language, since an earlier study demonstrated that 72\% of all tweets
+in the Arab region are in Arabic [94].
+
+In this present study, the textual analysis accounted for underscores
+and spaces only where they occurred as word separators. While this
+implied that capitalised hashtags should be considered as a single
+word, this would not provide an accurate analysis for this group of
+trends, but since Arabic trends were dominant in the dataset, and only
+capitalised hashtags were affected, this was not anticipated to have
+an impact on the results of the analysis.
 
 
 \subsection{Derived Graph: Trend-Ngrams}
 
-This directed graph utilized the trend nodes in the base graph to generate its nodes and 
-edges. It included two types of nodes: trend and ngram. To generate ngrams from a 
-trend, the trend first required tokenization. The trends displayed in two forms, either as 
-a phrase, such as 'coffee international day', or a hashtag such as '{\texttt{\#coffee\_international\_day}}'. 
-Phrase trends can be tokenized from their original form, while hashtags do not include spaces, 
-and hence appear as one word, and therefore first required processing in order that all of the 
-trends were translated into phrase form before being tokenized. The hashtags processing 
-involved stripping them of the '\#' sign, and replacing the underscores with spaces. Then, 
-preserving the word order, the phrases were tokenized, and all possible ngrams then generated. 
-The original trend was connected to all of the ngrams generated, and an additional length attribute 
-was added to each node within the graph, as shown in lines seven and nine in Algorithm ‎4 4. 
-This attribute was used later in the analysis and the visualization setting. Applying this 
-algorithm to the hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the graph shown 
-in Figure~\ref{fig:tngraph}.
+This directed graph utilised the trend nodes in the base graph to
+generate its nodes and edges. It included two types of nodes: trend
+and ngram. To generate ngrams from a trend, the trend first required
+tokenisation. The trends displayed in two forms, either as a phrase,
+such as 'coffee international day', or a hashtag such as
+'{\texttt{\#coffee\_international\_day}}'.  Phrase trends can be
+tokenised from their original form, while hashtags do not include
+spaces, and hence appear as one word, and therefore first required
+processing in order that all of the trends were translated into phrase
+form before being tokenised. The hashtags processing involved
+stripping them of the '\#' sign, and replacing the underscores with
+spaces. Then, preserving the word order, the phrases were tokenised,
+and all possible ngrams then generated.  The original trend was
+connected to all of the ngrams generated, and an additional length
+attribute was added to each node within the graph, as shown in lines
+seven and nine in Algorithm~4.4.  This attribute was used later in the
+analysis and the visualisation setting. Applying this algorithm to the
+hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the
+graph shown in Figure~\ref{fig:tngraph}.
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
@@ -251,19 +264,25 @@ in Figure~\ref{fig:tngraph}.
 \label{fig:tngraph}
 \end{figure}
 
-A trend node in the base graph cannot be repeated. Therefore, the edges linking 
-the trend to the ngrams in this graph were expected to have a fixed weight of 1. 
-However, observation of the edge weights revealed edges with higher weights, namely 
-2 and 3, occurring in trends with repeated words, such as '{\texttt{\#welcome\_you\_welcome}}.
-In total, 264 trends had two repeated words, while five trends had three. Since this small number 
-of cases fell outside the context of this study, and the analysis of this graph did not utilize individual 
-edge weights, they did not affect the results. As a result, only the indegree and outdegree 
-centrality measures were employed for this graph, with both the indegree of all of the trend nodes, 
-and the outdegree of the ngram nodes being 0. These two measures were employed in the analysis 
-phase to distinguish the node types. Furthermore, the indegree of the ngram nodes reflected the 
-number of the connected trend, and was at least 1. The outdegree of the trend nodes indicated 
-the number of related ngrams. As the ngrams were generated from the trends, the outdegree of 
-the trend was found to be fixed, and was equivalent to (n(n+1))/2, where n is length of trend.
+A trend node in the base graph cannot be repeated. Therefore, the
+edges linking the trend to the ngrams in this graph were expected to
+have a fixed weight of 1.  However, observation of the edge weights
+revealed edges with higher weights, namely 2 and 3, occurring in
+trends with repeated words, such as
+`{\texttt{\#welcome\_you\_welcome}}'.  In total, 264 trends had two
+repeated words, while five trends had three. Since this small number
+of cases fell outside the context of this study, and the analysis of
+this graph did not utilize individual edge weights, they did not
+affect the results. As a result, only the indegree and outdegree
+centrality measures were employed for this graph, with both the
+indegree of all of the trend nodes, and the outdegree of the ngram
+nodes being 0. These two measures were employed in the analysis phase
+to distinguish the node types. Furthermore, the indegree of the ngram
+nodes reflected the number of the connected trend, and was at least
+1. The outdegree of the trend nodes indicated the number of related
+ngrams. As the ngrams were generated from the trends, the outdegree of
+the trend was found to be fixed, and was equivalent to $(n(n+1))/2$,
+where n is length of trend.
 
 \section{Results}\label{results}
 
@@ -278,11 +297,13 @@ scoring highest rate. {\emph{Indegree}}, {\emph{outdegree}}, and
 explanation to follow in the relevant sections.
 
 \subsection{Textual features of trends}
-As can be seen in Figure~\ref{fig:trends_lengths_wind}, two-word trends 
-were the most common trends. Presence of 1 and 3-word trends were at 
-similar level, and 4-word trend are a little lower. Then, lengths started to 
-show dramatic drop from 5-word onwards. Additionally, weighted indegree 
-of trend was found strongly correlated with the word length.
+
+As can be seen in Figure~\ref{fig:trends_lengths_wind}, two-word
+trends were the most common trends. Presence of 1 and 3-word trends
+were at similar level, and 4-word trend are a little lower. Then,
+lengths started to show dramatic drop from 5-word
+onwards. Additionally, weighted indegree of trend was found strongly
+correlated with the word length.
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/trends_lengths_wind.png}
@@ -290,15 +311,17 @@ of trend was found strongly correlated with the word length.
 \label{fig:trends_lengths_wind}
 \end{figure}
 
-A single odd case was found in which processing the trend’s text resulted 
-in 16 words, which indicate very unusual case. Further investigation uncovered 
-that the trend consists of three words that were intentionally letter spaced, 
-seemingly for fun. To clarify it further, the trend was in Arabic and it is the 
-equivalent of {\texttt{\#WriteInSeparateLetters} but was written as 
-{\texttt#w_r_i_t_e_I_n_S_e_p_a_r_a_t_e_L_e_t_t_e_r_s. 
-Therefore, this was removed from the dataset before progressing to 
-further analysis. This demonstrates additional benefit of analysing length 
-of trend in removing such odd cases.
+A single odd case was found in which processing the trend’s text
+resulted in 16 words, which indicate very unusual case. Further
+investigation uncovered that the trend consists of three words that
+were intentionally letter spaced, seemingly for fun. To clarify it
+further, the trend was in Arabic and it is the equivalent of
+{\texttt{\#WriteInSeparateLetters} but was written as
+{\footnotesize{{\texttt{\#w\_r\_i\_t\_e\_I\_n\_S\_e\_p\_a\_r\_a\_t\_e\_L\_e\_t\_t\_e\_r\_s}}}}.
+Therefore, this was removed from the dataset before progressing to
+further analysis. This demonstrates additional benefit of analysing
+length of trend in removing such odd cases.
+
 \section{Conclusions}\label{conclusions}
 
 
