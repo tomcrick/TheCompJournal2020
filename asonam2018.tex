@@ -190,11 +190,11 @@ of trends, repetition rate, participation of countries, and the volume
 of the engagement. Figrue~\ref{fig:basegraph} shows an example 
 of such graph.
 
-% \begin{figure}[htb] \centering
-% \includegraphics[width=\columnwidth]{images/base_graph.png}
-% \caption{Example of weighted base graph}
-% \label{fig:basegraph}
-% \end{figure}
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/base_graph.png}
+\caption{Example of weighted base graph}
+\label{fig:basegraph}
+\end{figure}
 
 
 \subsection{Text analysis and Ngraming}
@@ -245,11 +245,11 @@ This attribute was used later in the analysis and the visualization setting. App
 algorithm to the hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the graph shown 
 in Figure~\ref{fig:tngraph}.
 
-% \begin{figure}[htb] \centering
-% \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
-% \caption{Trend-Ngram graph example}
-% \label{fig:tngraph}
-% \end{figure}
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
+\caption{Trend-Ngram graph example}
+\label{fig:tngraph}
+\end{figure}
 
 A trend node in the base graph cannot be repeated. Therefore, the edges linking 
 the trend to the ngrams in this graph were expected to have a fixed weight of 1. 
@@ -277,8 +277,8 @@ scoring highest rate. {\emph{Indegree}}, {\emph{outdegree}}, and
 {\emph{edges}} were used to conduct subsequent results, with further
 explanation to follow in the relevant sections.
 
-\subsection{Trend texts: processing and features}
-As can be seen in  Figure ~\ref{fig:trends_lengths_wind}, two-word trends 
+\subsection{Textual features of trends}
+As can be seen in Figure~\ref{fig:trends_lengths_wind}, two-word trends 
 were the most common trends. Presence of 1 and 3-word trends were at 
 similar level, and 4-word trend are a little lower. Then, lengths started to 
 show dramatic drop from 5-word onwards. Additionally, weighted indegree 
@@ -287,7 +287,7 @@ of trend was found strongly correlated with the word length.
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/trends_lengths_wind.png}
 \caption{Ratios of trend lengths and their weighted indegree}
-\label{fig:tngraph}
+\label{fig:trends_lengths_wind}
 \end{figure}
 
 A single odd case was found in which processing the trend’s text resulted 
