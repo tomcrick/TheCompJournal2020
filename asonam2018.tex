@@ -254,7 +254,40 @@ number of the connected trend, and was at least 1. The outdegree of the trend no
 the number of related ngrams. As the ngrams were generated from the trends, the outdegree of 
 the trend was found to be fixed, and was equivalent to (n(n+1))/2, where n is length of trend.
 
+\section{Results}\label{results}
 
+Observation of the weighted graph provided an overall evaluation of
+activity for trends and places. In total there were 76,266 distinct
+trends that trended 2,307,163 times across all locations; this
+suggests that trends may appear repeatedly over time. The overall
+repetition ratio in the dataset was 97\%, and ranged from 80\% to 98\%
+for individual locations, with Saudi Arabia scoring lowest and Qatar
+scoring highest rate. {\emph{Indegree}}, {\emph{outdegree}}, and
+{\emph{edges}} were used to conduct subsequent results, with further
+explanation to follow in the relevant sections.
+
+\subsection{Trend texts: processing and features}
+As can be seen in  Figure ~\ref{fig:trends_lengths_wind}, two-word trends 
+were the most common trends. Presence of 1 and 3-word trends were at 
+similar level, and 4-word trend are a little lower. Then, lengths started to 
+show dramatic drop from 5-word onwards. Additionally, weighted indegree 
+of trend was found strongly correlated with the word length.
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/trends_lengths_wind.png}
+\caption{Ratios of trend lengths and their weighted indegree}
+\label{fig:tngraph}
+\end{figure}
+
+A single odd case was found in which processing the trend’s text resulted 
+in 16 words, which indicate very unusual case. Further investigation uncovered 
+that the trend consists of three words that were intentionally letter spaced, 
+seemingly for fun. To clarify it further, the trend was in Arabic and it is the 
+equivalent of {\texttt{\#WriteInSeparateLetters} but was written as 
+{\texttt#w_r_i_t_e_I_n_S_e_p_a_r_a_t_e_L_e_t_t_e_r_s. 
+Therefore, this was removed from the dataset before progressing to 
+further analysis. This demonstrates additional benefit of analysing length 
+of trend in removing such odd cases.
 \section{Conclusions}\label{conclusions}
 
 
