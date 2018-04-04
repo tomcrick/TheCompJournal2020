@@ -351,9 +351,29 @@ chains that feature more specific topics or issues.
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/foreign_ministers_tree.png}
-\caption{Foreign ministers topic tree}
+\caption{Topic tree for foreign ministers trends}
 \label{fig:ministers_tree}
 \end{figure}
+
+\subsection{Merging graphs: Country-Trend-Ngram}
+
+Chain and tree graphs can be extended to provide more insights on participation 
+of countries. Since the example in Figure~\ref{fig:ministers_tree} is relatively low in size, its visual 
+representation will be clearer to present here. The ngram-trends graph above 
+was merged with related edges from the base graph (country-trend). 
+This has resulted in more detailed graph, by which visualisation became more 
+informative, as can be seen in Figure~\ref{fig:ctn_graph} below. This graph inherits nodes and 
+edges from the combined graphs (country-trend and trend-ngram). Therefore, 
+it includes three types of nodes; country, trend, and ngram, and two kinds of 
+directed edges; countrytrend and trendngram. So, paths flow as country->trend-> ngram. 
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/ctn_graph.png}
+\caption{Foreign ministers tree merged with base graph}
+\label{fig:ctn_graph}
+\end{figure}
+
+
 
 \section{Conclusions}\label{conclusions}
 
