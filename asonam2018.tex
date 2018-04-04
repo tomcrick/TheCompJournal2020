@@ -322,6 +322,39 @@ Therefore, this was removed from the dataset before progressing to
 further analysis. This demonstrates additional benefit of analysing
 length of trend in removing such odd cases.
 
+\subsection{Chain and Tree topics}
+
+Investigation of trend-ngram graph uncovered two special group of trends 
+that appeared in form of trees and chains. 
+Each form features trends that relate to same ngram but longer by exactly 
+one segment in terms of word numbers. This last segment is found to be 
+the key to distinguish trend trees from chains. Last segments of all related 
+trends are examined to confirm if they are digit or words. Then, chain 
+likelihood is calculated by measuring the ratio of digits to words is measured. 
+For example, “\#Call\_for\_action\_1”, “\#Call\_For\_Action\_2”, and 
+“\#Call\_for\_action\_3” 
+form a trend chain and relate to the ngram “Call,For,Action”. An example 
+of a trends tree graph would be the trends “coffee\_international\_day” and 
+“books\_international\_day” relating to ngram “international,day”. Indegree of 
+the ngram indicates number of relating trends and measure length of the 
+trend chain or topic branches. Referring to the trigram T1 in Table ‎4 13, 
+it was found with chain likelihood of 1, and has indegree of 224, shown in 
+Figure ‎4.17. Having a perfect chain with high indegree is very likely to uncover 
+well-planned ‘Twitter campaign’, regardless of its aims or representativeness 
+of public concerns on the real world. On the other hand, when value of chain 
+likelihood is found 0, some perfect trend trees were identified. 
+Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}. 
+The core of the graph is the bigram ‘forign,minister’, and is connected to 25 
+trends, such as ‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be seen, 
+trend trees were found featruing more general topics compared to trend 
+chains that feature more specific topics or issues.
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/foreign_ministers_tree.png}
+\caption{Foreign ministers topic tree}
+\label{fig:ministers_tree}
+\end{figure}
+
 \section{Conclusions}\label{conclusions}
 
 
