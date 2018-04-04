@@ -14,35 +14,48 @@
 
 \title{Chains and Trees: Topical Patterns in Twitter Trends}
 
-\author{\IEEEauthorblockN{Nabeel Albishry}
-\IEEEauthorblockA{\textit{Faculty of Engineering} \\
-\textit{University of Bristol}\\
-Bristol, UK \\
-n.albishry@bristol.ac.uk}
+\author{\IEEEauthorblockN{Nabeel
+    Albishry\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Tom
+    Crick\IEEEauthorrefmark{3} and Theo Tryfonas\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Faculty of Engineering, 
+University of Bristol, Bristol, UK\\
+Email: \{n.albishry,theo.tryfonas\}@bristol.ac.uk}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Faculty of Computing \& IT, 
+King Abdulaziz University, Jeddah, Saudi Arabia\\
+Email: nalbishry@kau.edu.sa}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Department of Computer
+  Science, Swansea University, Swansea, UK\\
+Email: thomas.crick@swansea.ac.uk}}
+
+% \author{\IEEEauthorblockN{Nabeel Albishry}
+% \IEEEauthorblockA{\textit{Faculty of Engineering} \\
+% \textit{University of Bristol}\\
+% Bristol, UK \\
+% n.albishry@bristol.ac.uk}
+% % \and
+% % \IEEEauthorblockA{\textit{Faculty of Computing \& IT} \\
+% % \textit{King Abdulaziz University}\\
+% % Jeddah, Saudi Arabia \\
+% % nalbishry@kau.edu.sa}
 % \and
-% \IEEEauthorblockA{\textit{Faculty of Computing \& IT} \\
-% \textit{King Abdulaziz University}\\
-% Jeddah, Saudi Arabia \\
-% nalbishry@kau.edu.sa}
-\and
-\IEEEauthorblockN{Tom Crick}
-\IEEEauthorblockA{\textit{Department of Computer Science} \\
-\textit{Swansea University}\\
-Swansea, UK \\
-thomas.crick@swansea.ac.uk}
-\and
-\IEEEauthorblockN{Theo Tryfonas}
-\IEEEauthorblockA{\textit{Faculty of Engineering} \\
-\textit{University of Bristol}\\
-Bristol, UK \\
-theo.tryfonas@bristol.ac.uk}
+% \IEEEauthorblockN{Tom Crick}
+% \IEEEauthorblockA{\textit{Department of Computer Science} \\
+% \textit{Swansea University}\\
+% Swansea, UK \\
+% thomas.crick@swansea.ac.uk}
 % \and
-% \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-% \textit{name of organization (of Aff.)}\\
-% City, Country \\
-% email address}
-}
+% \IEEEauthorblockN{Theo Tryfonas}
+% \IEEEauthorblockA{\textit{Faculty of Engineering} \\
+% \textit{University of Bristol}\\
+% Bristol, UK \\
+% theo.tryfonas@bristol.ac.uk}
+% % \and
+% % \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
+% % \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+% % \textit{name of organization (of Aff.)}\\
+% % City, Country \\
+% % email address}
+% }
 
 \maketitle
 
@@ -109,8 +122,6 @@ trends~\cite{Mathioudakis2010,Zubiaga2015}. With the increasing demand
 for trends analysis across various domains, customisable clustering
 tools that can be used by non-technical users have started to emerge,
 such as the recent example introduced in~\cite{Arn2018}.
-
-Dummy cite~\cite{oatley+crick:snam2015,albishry-et-al:iccci2017,albishry-et-al:ssei2018}
 
 \section{Methodology}\label{method}
 
@@ -179,11 +190,11 @@ of trends, repetition rate, participation of countries, and the volume
 of the engagement. Figrue~\ref{fig:basegraph} shows an example 
 of such graph.
 
-\begin{figure}[htb] \centering
-\includegraphics[width=\columnwidth]{images/base_graph.png}
-\caption{Example of weighted base graph}
-\label{fig:basegraph}
-\end{figure}
+% \begin{figure}[htb] \centering
+% \includegraphics[width=\columnwidth]{images/base_graph.png}
+% \caption{Example of weighted base graph}
+% \label{fig:basegraph}
+% \end{figure}
 
 
 \subsection{Text analysis and Ngraming}
@@ -234,11 +245,11 @@ This attribute was used later in the analysis and the visualization setting. App
 algorithm to the hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the graph shown 
 in Figure~\ref{fig:tngraph}.
 
-\begin{figure}[htb] \centering
-\includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
-\caption{Trend-Ngram graph example}
-\label{fig:tngraph}
-\end{figure}
+% \begin{figure}[htb] \centering
+% \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
+% \caption{Trend-Ngram graph example}
+% \label{fig:tngraph}
+% \end{figure}
 
 A trend node in the base graph cannot be repeated. Therefore, the edges linking 
 the trend to the ngrams in this graph were expected to have a fixed weight of 1. 
