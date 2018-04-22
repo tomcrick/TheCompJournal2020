@@ -337,11 +337,10 @@ form a trend chain and relate to the ngram “Call,For,Action”. An example
 of a trends tree graph would be the trends “coffee\_international\_day” and 
 “books\_international\_day” relating to ngram “international,day”. Indegree of 
 the ngram indicates number of relating trends and measure length of the 
-trend chain or topic branches. Referring to the trigram T1 in Table ‎4 13, 
-it was found with chain likelihood of 1, and has indegree of 224, shown in 
-Figure ‎4.17. Having a perfect chain with high indegree is very likely to uncover 
-well-planned ‘Twitter campaign’, regardless of its aims or representativeness 
-of public concerns on the real world. On the other hand, when value of chain 
+trend chain or topic branches. Having a perfect chain with high indegree 
+is very likely to uncover well-planned ‘Twitter campaign’, regardless 
+of its aims or representativeness of public concerns on the real world. 
+On the other hand, when value of chain 
 likelihood is found 0, some perfect trend trees were identified. 
 Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}. 
 The core of the graph is the bigram ‘forign,minister’, and is connected to 25 
@@ -365,7 +364,7 @@ This has resulted in more detailed graph, by which visualisation became more
 informative, as can be seen in Figure~\ref{fig:ctn_graph} below. This graph inherits nodes and 
 edges from the combined graphs (country-trend and trend-ngram). Therefore, 
 it includes three types of nodes; country, trend, and ngram, and two kinds of 
-directed edges; countrytrend and trendngram. So, paths flow as country->trend-> ngram. 
+directed edges; countrytrend and trendngram. So, paths flow as country-trend-ngram. 
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/ctn_graph.png}
@@ -379,7 +378,7 @@ The analysis of trends showed a high repetitiveness in the more general trends,
 such as ‘\#good\_morning’, ‘\#Friday’, and ‘\#Trump’. Nevertheless, the topic 
 ngrams helped to group the trends to provide a broader view. The trend-ngram 
 graph facilitated the measurement of various forms of related trends. 
-For example, the bigram ‘راح،نفلسكم’ (‘We will, bankrupt you,’) was found in 
+For example, the bigram (‘We will, bankrupt you,’) was found in 
 relation to 232 trends. As ngrams are inclusive, the general graphs favoured 
 smaller ngrams, such as unigrams and bigrams, over larger forms. Therefore, 
 the ngram-specific graphs were more useful in conducting a more accurate 
@@ -391,16 +390,16 @@ Meanwhile, using the chain likelihood measure in the trend-ngram graph helped
 to identify certain important topics and their graph structures. Although many 
 related trends had chain likelihood values between 0 and 1, some important topics 
 emerged in the perfect form of chains or trees, 0 for trees, or 1 for chains. 
-The longest chain was found to be ‘سعوديات\_نطلب\_إسقاط’ 
+The longest chain was found to be 
 (Saudi\_women\_request\_guardianship\_omission), which had links to 224 trend 
 versions. Trend chains were useful for identifying frequently trending topics, 
 and reflected a good degree of organization in promoting and running social 
 media campaigns. Furthermore, the trend trees graph structures helped to identify 
 the subtopics of related trends, and their root topic. In addition to the tree example 
-in Figure ‎4.18, the bigram ‘اليوم,العالمي’ (‘international\_day’) was found to be linked 
-to 64 trends representing different celebrated days on Twitter. Other perfect forms 
-of trees included matches for football clubs, such as ‘ريال، مدريد’ (‘Real\_madrid’), and 
-celebrity birthdays ‘عيد،ميلاد’ (‘birthday’). 
+in Figure~\ref{fig:ministers_tree}, the bigram (‘international\_day’) 
+was found to be linked to 64 trends representing different celebrated days on Twitter. Other perfect forms 
+of trees included matches for football clubs, such as (‘Real\_madrid’), and 
+celebrity birthdays (‘birthday’). 
 The overall view of the chains and trees was that the trend chains possessed a 
 consistent textual structure that constituted a form of tweeting consensus over time, 
 and therefore increased the likelihood of further similar trends appearing in the chain. 
