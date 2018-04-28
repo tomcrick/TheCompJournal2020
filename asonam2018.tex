@@ -183,20 +183,41 @@ participation volume of each location was not possible to be
 accurately measured. Therefore, the context of this study does not
 include any reference to this volume entity.
 
-\subsection{Weighed Base Graph Construction}
+\subsection{Base Graph Construction: Temporal edges}
 
-This graph is a directed graph that consists of two trend entities:
+This directed graph was constructed from raw data. The main use of this graph was to measure the temporal appearance order of the trends for places. As the graph was aimed to mainly capture data structures, constructing this graph was a simple process.
+In this graph each edge had a timestamp of the trend appearance, therefore the connected pair of nodes might possess more than one edge, as shown in Figure~\ref{fig:basegraph}. The participation of the country measures the number of trends it generates, hence, two types of nodes were included in this graph: country and trend. It is important to note that the network was constructed whereby the edges originated from the country node toward the trend node. Although an undirected graph could be used, the direction orientation was important for distinguishing the node types by their indegrees. The nodes with a zero indegree identified countries, while the indegree of the trends nodes could not be less than one. Changing the direction of the edge would provide the same results, and in this case, inverted centrality measures were used. For example, the indegree was used instead of the outdegree, and vice versa. 
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/base_graph.png}
+\caption{Illustration of the base graph}
+\label{fig:basegraph}
+\end{figure}
+
+
+\subsection{Derived Weighed Graph Construction}
+
+This graph is generated from the base graph, following the algorithm 
+shown in Figure~\ref{fig:algorithm1}. It is a directed graph and that consists of two trend entities:
 {\emph{place}} and {\emph{trend}}. Nodes represent places and
 trends, and are linked with {\emph{weighted}} edges. The feature 
 of weighted edges in this graph is used to measure the popularity 
 of trends, repetition rate, participation of countries, and the volume 
-of the engagement. Figure~\ref{fig:basegraph} shows an example 
+of the engagement. Figure~\ref{fig:w_graph} shows an example 
 of such graph.
 
+
 \begin{figure}[htb] \centering
-\includegraphics[width=\columnwidth]{images/base_graph.png}
-\caption{Example of weighted base graph}
-\label{fig:basegraph}
+\includegraphics[width=\columnwidth]{images/algorithm1.png}
+\caption{Country-Trend weighted graph construction algorithm}
+\label{fig:algorithm1}
+\end{figure}
+
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/w_graph.png}
+\caption{Example of weighted graph}
+\label{fig:w_graph}
 \end{figure}
 
 
@@ -252,10 +273,18 @@ spaces. Then, preserving the word order, the phrases were tokenised,
 and all possible ngrams then generated.  The original trend was
 connected to all of the ngrams generated, and an additional length
 attribute was added to each node within the graph, as shown in lines
-seven and nine in Algorithm~4.4.  This attribute was used later in the
+seven and nine in Figure~\ref{fig:algorithm2}. 
+This attribute was used later in the
 analysis and the visualisation setting. Applying this algorithm to the
 hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the
 graph shown in Figure~\ref{fig:tngraph}.
+
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/algorithm2.png}
+\caption{Trend-Ngram graph construction algorithm}
+\label{fig:algorithm2}
+\end{figure}
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
