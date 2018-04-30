@@ -303,7 +303,7 @@ graph shown in Figure~\ref{fig:tngraph}.
 \begin{tabular}{l|l}
 \hline
 {\emph{1}} & trend\_ngram\_graph = empty\_graph()\\
-{\emph{2}} & \textbf{For} node \textbf(in) base\_graph.nodes():\\
+{\emph{2}} & \textbf{For} node \textbf{in} base\_graph.nodes():\\
 {\emph{3}} &  $\>\>\>\>$ \textbf{if} indegree(node) = 0:\\
 {\emph{4}} &  $\>\>\>\>\>\>\>\>$tokens = tokenize(node)\\
 {\emph{5}} &  $\>\>\>\>\>\>\>\>$trend\_ngram\_graph.add\_node(node, length(tokens))\\
