@@ -292,15 +292,32 @@ spaces. Then, preserving the word order, the phrases were tokenised,
 and all possible ngrams then generated.  The original trend was
 connected to all of the ngrams generated, and an additional length
 attribute was added to each node within the graph, as shown in lines
-seven and nine in 
-%Figure~\ref{fig:algorithm2}. 
+five and seven in Table~\ref{tbl:algorithm2}. 
 This attribute was used later in the
 analysis and the visualisation setting. Applying this algorithm to the
 hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the
 graph shown in Figure~\ref{fig:tngraph}.
 
-
-
+\begin{table}
+\centering
+\begin{tabular}{l|l}
+\hline
+{\emph{1}} & trend\_ngram\_graph = empty\_graph()\\
+{\emph{2}} & \textbf{For} node \textbf(in) base\_graph.nodes():\\
+{\emph{3}} &  $\>\>\>\>$ \textbf{if} indegree(node) = 0:\\
+{\emph{4}} &  $\>\>\>\>\>\>\>\>$tokens = tokenize(node)\\
+{\emph{5}} &  $\>\>\>\>\>\>\>\>$trend\_ngram\_graph.add\_node(node, length(tokens))\\
+{\emph{6}} &  $\>\>\>\>\>\>\>\>$\textbf{For} n \textbf{in} all\_ngrams(tokens):\\
+{\emph{7}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ trend\_ngram\_graph.add\_node(n, length(n)):\\
+{\emph{8}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{if} trend\_ngram\_graph.has\_edge(node, n):\\
+{\emph{9}} &  $\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>$ edge\_weight += 1\\
+{\emph{10}} & $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{else:}\\
+{\emph{11}} & $\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>$ add\_edge(node, n)\\
+\hline
+\end{tabular}
+\caption{Trend-Ngram graph construction algorithm}
+\label{tbl:algorithm2}
+\end{table}
 
 % \begin{figure}[htb] \centering
 % \includegraphics[width=\columnwidth]{images/algorithm2.png}
