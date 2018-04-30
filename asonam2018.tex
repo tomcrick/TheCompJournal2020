@@ -211,10 +211,10 @@ of such graph.
 \begin{tabular}{l|l}
 \hline
 {\emph{1}} & weighted\_graph = empty\_graph()\\
-{\emph{2}} & \textbf{For} edge \textbf{in} base\_graph.edges():\\
-{\emph{3}} &  $\>\>\>\>$\textbf{if} weighted\_graph.has\_edge(country, trend):\\
+{\emph{2}} & \textbf{FOR} edge \textbf{IN} base\_graph.edges():\\
+{\emph{3}} &  $\>\>\>\>$\textbf{IF} weighted\_graph.has\_edge(country, trend):\\
 {\emph{4}} &  $\>\>\>\>\>\>\>\>$ edge\_weight+=1\\
-{\emph{5}} &  $\>\>\>\>$\textbf{else:}\\
+{\emph{5}} &  $\>\>\>\>$\textbf{ELSE:}\\
 {\emph{6}} &  $\>\>\>\>\>\>\>\>$ add\_edge(country, trend)\\
 \hline
 \end{tabular}
@@ -230,7 +230,7 @@ of such graph.
 %\end{figure}
 
 
-\begin{figure}[htb] \centering
+\begin{figure}[!ht] \centering
 \includegraphics[width=\columnwidth]{images/w_graph.png}
 \caption{Example of weighted graph}
 \label{fig:w_graph}
@@ -302,15 +302,15 @@ graph shown in Figure~\ref{fig:tngraph}.
 \begin{tabular}{l|l}
 \hline
 {\emph{1}} & trend\_ngram\_graph = empty\_graph()\\
-{\emph{2}} & \textbf{For} node \textbf{in} base\_graph.nodes():\\
-{\emph{3}} &  $\>\>\>\>$ \textbf{if} indegree(node) = 0:\\
+{\emph{2}} & \textbf{FOR} node \textbf{IN} base\_graph.nodes():\\
+{\emph{3}} &  $\>\>\>\>$ \textbf{IF} indegree(node) = 0:\\
 {\emph{4}} &  $\>\>\>\>\>\>\>\>$tokens = tokenize(node)\\
 {\emph{5}} &  $\>\>\>\>\>\>\>\>$trend\_ngram\_graph.add\_node(node, length(tokens))\\
-{\emph{6}} &  $\>\>\>\>\>\>\>\>$\textbf{For} n \textbf{in} all\_ngrams(tokens):\\
+{\emph{6}} &  $\>\>\>\>\>\>\>\>$\textbf{FOR} n \textbf{IN} all\_ngrams(tokens):\\
 {\emph{7}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ trend\_ngram\_graph.add\_node(n, length(n)):\\
-{\emph{8}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{if} trend\_ngram\_graph.has\_edge(node, n):\\
+{\emph{8}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{IF} trend\_ngram\_graph.has\_edge(node, n):\\
 {\emph{9}} &  $\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>$ edge\_weight += 1\\
-{\emph{10}} & $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{else:}\\
+{\emph{10}} & $\>\>\>\>\>\>\>\>\>\>\>\>$ \textbf{ELSE:}\\
 {\emph{11}} & $\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>\>$ add\_edge(node, n)\\
 \hline
 \end{tabular}
@@ -324,7 +324,7 @@ graph shown in Figure~\ref{fig:tngraph}.
 % \label{fig:algorithm2}
 % \end{figure}
 
-\begin{figure}[htb] \centering
+\begin{figure}[!tb] \centering
 \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
 \caption{Trend-Ngram graph example}
 \label{fig:tngraph}
