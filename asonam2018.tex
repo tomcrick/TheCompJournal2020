@@ -97,13 +97,13 @@ marketing and business domains, topic detection and classification are
 valuable approaches to extract knowledge and insight on public
 opinions from posts on social
 media~\cite{blamey-et-al-2012,blamey-et-al-2013,Bello2013,mostafa-et-al-ai2016,albishry-et-al:ssei2018},
-including analysing voting intentions and political view of
-users~\cite{Fang2015}.
+including analysing political view of
+users and voting intentions~\cite{Fang2015}.
 
 With the increasing popularity and use of social networks across a
-wide range of domains, the impact of trends on public opinion and
-perceptions has transformed social media campaigns and public
-relations strategy. This has made trends a valuable target for
+wide range of domains, the impact of live trending data on public
+opinion and perceptions has transformed social media campaigns and
+public relations strategy. This has made trends a valuable target for
 manipulation~\cite{Zhang2017}, stuffing~\cite{Irani2010},
 spamming~\cite{Sedhai2015,Chu2012}, and
 hijacking~\cite{VanDam2016}. Interestingly, deeper analysis of trend
@@ -113,25 +113,24 @@ strategies~\cite{Sanderson2016,albishry-et-al:ssei2018}.
 
 A common approach in analysing Twitter trends is through clustering
 and classification of trending topics based on
-content~\cite{Zubiaga2011,Benhardus2013,Ferragina2015,albishry-et-al:iccci2017}.
-The study in~\cite{TenThij2016} presented a content-independent method
-to model trends progression through the dynamics of users
-interactions; other studies have also attempted to provide real-time
-classification or detection of
-trends~\cite{Mathioudakis2010,Zubiaga2015}. With the increasing demand
-for trends analysis across various domains, customisable clustering
-tools that can be used by non-technical users have started to emerge,
-such as the recent example introduced in~\cite{Arn2018}.
+content~\cite{Zubiaga2011,Benhardus2013,Ferragina2015,albishry-et-al:iccci2017}. Content-independent
+methods to model trends progression through the dynamics of users
+interactions have been successful previously~\cite{TenThij2016}; other
+studies have also attempted to provide real-time classification or
+detection of trends~\cite{Mathioudakis2010,Zubiaga2015}. With the
+increasing demand for trends analysis across various domains,
+customisable clustering tools that can be used by non-technical users
+have started to emerge~\cite{Arn2018}.
 
-% need to update Methodology from ICCCI
 \section{Methodology}\label{method}
 
-The approach in this study consists of two main parts; graph construction
-and text analysis. First, {\emph{weighted base graph}} is constructed to 
-capture raw trends data in the form of country-trend relationships. Trend 
-texts are then used to generate ngrams, and another {\emph{derived graph}}
-is generated from these trend-ngram relationships. Different parts of these 
-two graphs are then merged to link countries to topics of interests.
+The approach in this study consists of two main parts; graph
+construction and text analysis. First, the {\emph{weighted base
+graph}} is constructed to capture raw trends data in the form of
+country-trend relationships. Trend texts are then used to generate
+ngrams, with the {\emph{derived graph}} generated from these
+trend-ngram relationships. The different parts of these two graphs are
+then merged to link countries to topics of interests.
 
 \subsection{Locales}
 
@@ -263,7 +262,7 @@ therefore make word separation an easy and accurate task to
 accomplish. As the sample countries were from the Arab region, it was
 anticipated that most tweeting activity would occur in the Arabic
 language, since an earlier study demonstrated that 72\% of all tweets
-in the Arab region are in Arabic [94].
+in the Arab region are in Arabic~\cite{Salem2017}.
 
 In this present study, the textual analysis accounted for underscores
 and spaces only where they occurred as word separators. While this
