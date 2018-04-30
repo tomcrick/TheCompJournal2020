@@ -60,20 +60,22 @@ Email: thomas.crick@swansea.ac.uk}}
 \maketitle
 
 \begin{abstract}
-Thousands of topics trend on Twitter across the world every day,
-making it challenging to provide in-depth analysis of current issues,
-topics and themes being discussed across various locations and
-jurisdictions. There is thus a demand for simple and extensible
-approaches to provide deeper insight into these trends and how they
-propagate across locales. Utilising graph structures, this paper
-presents an exploration of topical patterns of trends on Twitter
-across various regions. It is based on a year-long data collection
-({\emph{N}}=2,307,163) and analysis between 2016-2017 of seven Middle
-Eastern countries (Bahrain, Egypt, Kuwait, Lebanon, Qatar, Saudi
-Arabia, and the United Arab Emirates). Using this year-long dataset,
-the project identified two interesting structures of topics; chains
-and trees. Trend topics that manifested themselves in these structures
-found to represent ongoing concerns and interests.
+With thousands of topics -- in multiple languages -- trending on
+Twitter across the world every day, it is increasingly challenging to
+provide in-depth analysis of current issues, topics and themes being
+discussed across these various locations and jurisdictions. Utilising
+a graph structure approach, this paper presents an exploration of
+topical patterns of trends on Twitter across various regions to
+provide simple and extensible approaches to allow deeper insight and
+analysis into these trends and how they propagate across locales. It
+is based on a year-long data collection ({\emph{N}}=2,307,163) and
+analysis between 2016-2017 of seven Middle Eastern countries (Bahrain,
+Egypt, Kuwait, Lebanon, Qatar, Saudi Arabia, and the United Arab
+Emirates). Using this year-long dataset, the project identified two
+interesting structures of topics, based around chains and trees. Trend
+topics that manifested themselves in these structures are found to
+represent key emerging concerns and interests to users on the relevant
+platform.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -97,8 +99,8 @@ marketing and business domains, topic detection and classification are
 valuable approaches to extract knowledge and insight on public
 opinions from posts on social
 media~\cite{blamey-et-al-2012,blamey-et-al-2013,Bello2013,mostafa-et-al-ai2016,albishry-et-al:ssei2018},
-including analysing political view of
-users and voting intentions~\cite{Fang2015}.
+including analysing political view of users and voting
+intentions~\cite{Fang2015}.
 
 With the increasing popularity and use of social networks across a
 wide range of domains, the impact of live trending data on public
@@ -182,8 +184,24 @@ study does not include any reference to this volume entity.
 
 \subsection{Base Graph Construction: Temporal edges}
 
-This directed graph was constructed from raw data. The main use of this graph was to measure the temporal appearance order of the trends for places. As the graph was aimed to mainly capture data structures, constructing this graph was a simple process.
-In this graph each edge had a timestamp of the trend appearance, therefore the connected pair of nodes might possess more than one edge, as shown in Figure~\ref{fig:basegraph}. The participation of the country measures the number of trends it generates, hence, two types of nodes were included in this graph: country and trend. It is important to note that the network was constructed whereby the edges originated from the country node toward the trend node. Although an undirected graph could be used, the direction orientation was important for distinguishing the node types by their indegrees. The nodes with a zero indegree identified countries, while the indegree of the trends nodes could not be less than one. Changing the direction of the edge would provide the same results, and in this case, inverted centrality measures were used. For example, the indegree was used instead of the outdegree, and vice versa. 
+This directed graph was constructed from raw data. The main use of
+this graph was to measure the temporal appearance order of the trends
+for places. As the graph was aimed to mainly capture data structures,
+constructing this graph was a simple process.  In this graph each edge
+had a timestamp of the trend appearance, therefore the connected pair
+of nodes might possess more than one edge, as shown in
+Figure~\ref{fig:basegraph}. The participation of the country measures
+the number of trends it generates, hence, two types of nodes were
+included in this graph: country and trend. It is important to note
+that the network was constructed whereby the edges originated from the
+country node toward the trend node. Although an undirected graph could
+be used, the direction orientation was important for distinguishing
+the node types by their indegrees. The nodes with a zero indegree
+identified countries, while the indegree of the trends nodes could not
+be less than one. Changing the direction of the edge would provide the
+same results, and in this case, inverted centrality measures were
+used. For example, the indegree was used instead of the outdegree, and
+vice versa.
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/base_graph.png}
@@ -245,9 +263,9 @@ possible to distinguish the words while maintaining their
 connectivity, and Twitter allows underscores to be used in multiple
 word hashtags. For languages such as English, letter capitalisation is
 an additional popular option in social media for hashtagging, such as
-\#ThisIsAnExample. However, languages such as Arabic, Urdu, and Farsi,
-do not employ capitalisation in the same way, therefore the only means
-of separating words is to use underscores.  
+{\texttt{\#ThisIsAnExample}}. However, languages such as Arabic, Urdu,
+and Farsi, do not employ capitalisation in the same way, therefore the
+only means of separating words is to use underscores.
 
 The textual analysis in
 this study required the trend texts to be tokenised to generate
@@ -278,13 +296,13 @@ This directed graph utilised the trend nodes in the base graph to
 generate its nodes and edges. It included two types of nodes: trend
 and ngram. To generate ngrams from a trend, the trend first required
 tokenisation. The trends displayed in two forms, either as a phrase,
-such as 'coffee international day', or a hashtag such as
-'{\texttt{\#coffee\_international\_day}}'.  Phrase trends can be
+such as `coffee international day', or a hashtag such as
+`{\texttt{\#coffee\_international\_day}}'.  Phrase trends can be
 tokenised from their original form, while hashtags do not include
 spaces, and hence appear as one word, and therefore first required
 processing in order that all of the trends were translated into phrase
 form before being tokenised. The hashtags processing involved
-stripping them of the '\#' sign, and replacing the underscores with
+stripping them of the `{\texttt{\#}}' sign, and replacing the underscores with
 spaces. Then, preserving the word order, the phrases were tokenised,
 and all possible ngrams then generated.  The original trend was
 connected to all of the ngrams generated, and an additional length
