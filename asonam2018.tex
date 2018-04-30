@@ -442,6 +442,8 @@ edges from the combined graphs (country-trend and trend-ngram). Therefore,
 it includes three types of nodes; country, trend, and ngram, and two kinds of 
 directed edges; country-trend and trend-ngram. So, paths flow as country-trend-ngram. 
 
+Because there is one ngram node only, one colour and fixed size are used to distinguish it (green). For country nodes, shades of red are used for weighted outdegree, while node size reflects outdegree. Whereas for trend nodes, purples shades are used for weighted indegree and size indicates indegree.
+
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/ctn_graph.png}
 \caption{Foreign ministers tree merged with weighed country-trend graph}
