@@ -100,29 +100,28 @@ valuable approaches to extract knowledge and insight on public
 opinions from posts on social
 media~\cite{blamey-et-al-2012,blamey-et-al-2013,Bello2013,mostafa-et-al-ai2016,albishry-et-al:ssei2018},
 including analysing political view of users and voting
-intentions~\cite{Fang2015}.
+intentions~\cite{oatley+crick:2014,Fang2015}.
 
-With the increasing popularity and use of social networks across a
-wide range of domains, the impact of live trending data on public
-opinion and perceptions has transformed social media campaigns and
-public relations strategy. This has made trends a valuable target for
-manipulation~\cite{Zhang2017}, stuffing~\cite{Irani2010},
-spamming~\cite{Sedhai2015,Chu2012}, and
+The impact of live trending data on public opinion and perceptions has
+transformed social media campaigns and public relations strategy. This
+has made trends a valuable target for manipulation~\cite{Zhang2017},
+stuffing~\cite{Irani2010}, spamming~\cite{Sedhai2015,Chu2012}, and
 hijacking~\cite{VanDam2016}. Interestingly, deeper analysis of trend
 hijacking cases suggests that increasing social media engagement may
 not always be beneficial for public relations
 strategies~\cite{Sanderson2016,albishry-et-al:ssei2018}.
 
-A common approach in analysing Twitter trends is through clustering
-and classification of trending topics based on
-content~\cite{Zubiaga2011,Benhardus2013,Ferragina2015,albishry-et-al:iccci2017}. Content-independent
-methods to model trends progression through the dynamics of users
-interactions have been successful previously~\cite{TenThij2016}; other
-studies have also attempted to provide real-time classification or
-detection of trends~\cite{Mathioudakis2010,Zubiaga2015}. With the
-increasing demand for trends analysis across various domains,
-customisable clustering tools that can be used by non-technical users
-have started to emerge~\cite{Arn2018}.
+Clustering and classification of trending topics based on content are
+common approaches in analysing Twitter
+trends~\cite{Zubiaga2011,Benhardus2013,Ferragina2015,albishry-et-al:iccci2017}.
+Content-independent methods to model trends progression through the
+dynamics of users interactions have been successful
+previously~\cite{TenThij2016}; other studies have also attempted to
+provide real-time classification or detection of
+trends~\cite{Mathioudakis2010,Zubiaga2015}. With the increasing demand
+for trends analysis across various domains, customisable clustering
+tools that can be used by non-technical users have started to
+emerge~\cite{Arn2018}.
 
 \section{Methodology}\label{method}
 
@@ -406,32 +405,35 @@ length of trend in removing such odd cases.
 
 \subsection{Chain and Tree topics}
 
-Investigation of trend-ngram graph uncovered two special group of trends 
-that appeared in form of trees and chains. 
-Each form features trends that relate to same ngram but longer by exactly 
-one segment in terms of word numbers. This last segment is found to be 
-the key to distinguish trend trees from chains. Last segments of all related 
-trends are examined to confirm if they are digit or words. Then, chain 
-likelihood is calculated by measuring the ratio of digits to words is measured. 
-For example, “\#Call\_for\_action\_1”, “\#Call\_For\_Action\_2”, and 
-“\#Call\_for\_action\_3” 
-form a trend chain and relate to the ngram “Call,For,Action”. An example 
-of a trends tree graph would be the trends “russian\_foreign\_minister” and 
-“american\_foreign\_minister” relating to ngram “foriegn,minister”. Indegree of 
-the ngram indicates number of relating trends and measure length of the 
-trend chain or number of topic branches. Having a perfect chain with high indegree 
-is very likely to uncover well-planned ‘Twitter campaign’, regardless 
-of its aims or representativeness of public concerns on the real world.
-The example in Figure~\ref{fig:stc_chain} represents a perfect chain with bigram 
-origin node. The example is related to a well-known boycott campaign that 
-started early October 2016 against the Saudi Telecommunication Company (STC) ~\cite{naffee-2016}.
-On the other hand, when value of chain 
-likelihood is found 0, some perfect trend trees were identified. 
-Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}. 
-The core of the graph is the bigram ‘forign,minister’, and is connected to 25 
-trends, such as ‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be seen, 
-trend trees were found featuring more general topics compared to trend 
-chains that feature more specific topics or issues.
+Investigation of trend-ngram graph uncovered two special group of
+trends that appeared in form of trees and chains.  Each form features
+trends that relate to same ngram but longer by exactly one segment in
+terms of word numbers. This last segment is found to be the key to
+distinguish trend trees from chains. Last segments of all related
+trends are examined to confirm if they are digit or words. Then, chain
+likelihood is calculated by measuring the ratio of digits to words is
+measured.  For example, “{\texttt{\#Call\_for\_action\_1}}”,
+“{\texttt{\#Call\_For\_Action\_2}}”, and
+“{\texttt{\#Call\_for\_action\_3}}” form a trend chain and relate to
+the ngram “Call,For,Action”. An example of a trends tree graph would
+be the trends “russian\_foreign\_minister” and
+“american\_foreign\_minister” relating to ngram
+“foriegn,minister”. Indegree of the ngram indicates number of relating
+trends and measure length of the trend chain or number of topic
+branches. Having a perfect chain with high indegree is very likely to
+uncover well-planned ‘Twitter campaign’, regardless of its aims or
+representativeness of public concerns on the real world.  The example
+in Figure~\ref{fig:stc_chain} represents a perfect chain with bigram
+origin node. The example is related to a well-known boycott campaign
+that started early October 2016 against the Saudi Telecommunication
+Company (STC)~\cite{naffee-2016}.  On the other hand, when value of
+chain likelihood is found 0, some perfect trend trees were identified.
+Representation of a perfect trends tree is shown in
+Figure~\ref{fig:ministers_tree}.  The core of the graph is the bigram
+‘foreign,minister’, and is connected to 25 trends, such as
+‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be
+seen, trend trees were found featuring more general topics compared to
+trend chains that feature more specific topics or issues.
 
 \begin{figure*}[htb] \centering
 \includegraphics[width=0.7\textwidth]{images/foreign_ministers_tree.png}
