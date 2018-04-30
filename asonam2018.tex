@@ -304,7 +304,7 @@ graph shown in Figure~\ref{fig:tngraph}.
 {\emph{1}} & trend\_ngram\_graph = empty\_graph()\\
 {\emph{2}} & \textbf{FOR} node \textbf{IN} base\_graph.nodes():\\
 {\emph{3}} &  $\>\>\>\>$ \textbf{IF} indegree(node) = 0:\\
-{\emph{4}} &  $\>\>\>\>\>\>\>\>$tokens = tokenize(node)\\
+{\emph{4}} &  $\>\>\>\>\>\>\>\>$tokens = tokenise(node)\\
 {\emph{5}} &  $\>\>\>\>\>\>\>\>$trend\_ngram\_graph.add\_node(node, length(tokens))\\
 {\emph{6}} &  $\>\>\>\>\>\>\>\>$\textbf{FOR} n \textbf{IN} all\_ngrams(tokens):\\
 {\emph{7}} &  $\>\>\>\>\>\>\>\>\>\>\>\>$ trend\_ngram\_graph.add\_node(n, length(n)):\\
@@ -400,8 +400,8 @@ likelihood is calculated by measuring the ratio of digits to words is measured.
 For example, “\#Call\_for\_action\_1”, “\#Call\_For\_Action\_2”, and 
 “\#Call\_for\_action\_3” 
 form a trend chain and relate to the ngram “Call,For,Action”. An example 
-of a trends tree graph would be the trends “russain\_foriegn\_minister” and 
-“american\_foriegn\_minister” relating to ngram “foriegn,minister”. Indegree of 
+of a trends tree graph would be the trends “russian\_foreign\_minister” and 
+“american\_foreign\_minister” relating to ngram “foriegn,minister”. Indegree of 
 the ngram indicates number of relating trends and measure length of the 
 trend chain or number of topic branches. Having a perfect chain with high indegree 
 is very likely to uncover well-planned ‘Twitter campaign’, regardless 
@@ -414,7 +414,7 @@ likelihood is found 0, some perfect trend trees were identified.
 Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}. 
 The core of the graph is the bigram ‘forign,minister’, and is connected to 25 
 trends, such as ‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be seen, 
-trend trees were found featruing more general topics compared to trend 
+trend trees were found featuring more general topics compared to trend 
 chains that feature more specific topics or issues.
 
 \begin{figure*}[htb] \centering
@@ -470,7 +470,7 @@ emerged in the perfect form of chains or trees, 0 for trees, or 1 for chains.
 The longest chain was found to be the Arabic version of
 (Saudi\_women\_request\_guardianship\_omission), which had links to 224 trend 
 versions. Trend chains were useful for identifying frequently trending topics, 
-and reflected a good degree of organization in promoting and running social 
+and reflected a good degree of organisation in promoting and running social 
 media campaigns. Furthermore, the trend trees graph structures helped to identify 
 the subtopics of related trends, and their root topic. In addition to the tree example 
 in Figure~\ref{fig:ministers_tree}, the bigram (‘international\_day’) 
@@ -500,10 +500,10 @@ This paper presented a mixed approach for trend analysis using graph constructio
 First, a directed base graph was generated to capture the country-trend relationships. For the trend nodes in this graph, other information, such as timestamp, was added as node attributes. This graph was used to measure trend popularity and the participation of the sample countries. From this graph, ngrams were generated from the trends to construct another directed base graph. The nodes in this graph represented trends and ngrams, and edges were created based on the trend-ngram relationships. The main attribute of these nodes was their word length, which was used to identify the chains and trees in the trends. Although the results showed perfect chain and tree structures, other mixed forms of structures could also be identified. For example, a tree of chains might be identified to provide another perspective of the results.
 Third, two graphs were combined to generate another directed graph, capturing both the country-trend, and trend-ngram relationships. Although the example shown was a perfect tree, this graph could be used to observe the contribution of countries in chains, or any other topic of interest. 
 
+Finally, the visual representation of the graphs was produced in two forms. First, due to their size, graphs such as country-trend, and trend-ngram required filtering, which was applied to include the important nodes, their edges, and related nodes, based on their centrality measures. Some examples visualised included the top 10\% of nodes with a high-weighted indegree. 
 
-Finally, the visual representation of the graphs was produced in two forms. First, due to their size, graphs such as country-trend, and trend-ngram required filtering, which was applied to include the important nodes, their edges, and related nodes, based on their centrality measures. Some examples visualized included the top 10\% of nodes with a high-weighted indegree. 
-The last form of visualization was based on the node of interest. The example in Figure~\ref{fig:ministers_tree} 
-were produced for hand-picked nodes, while the core node of the graph shown in Figure~\ref{fig:ctn_graph} was selected, and the related edges and nodes were then extracted before visualizing the whole graph. 
+The last form of visualisation was based on the node of interest. The example in Figure~\ref{fig:ministers_tree} 
+were produced for hand-picked nodes, while the core node of the graph shown in Figure~\ref{fig:ctn_graph} was selected, and the related edges and nodes were then extracted before visualising the whole graph. 
 In conclusion, the approach presented can employed to measure broad public concerns, and prolonged matters, as well as the possible spread of trends, based on their historical records as well as their originating country. The flexibility of this approach means it is appropriate for the aim of analysis. 
 A real-time application of this approach would be useful for observing certain trend activities, such as studying trend data in order to capture trends relating to a predefined ngram for a particular group of countries, or to discover emerging trend chains or trees.
 
