@@ -406,7 +406,10 @@ of a trends tree graph would be the trends “coffee\_international\_day” and
 the ngram indicates number of relating trends and measure length of the 
 trend chain or topic branches. Having a perfect chain with high indegree 
 is very likely to uncover well-planned ‘Twitter campaign’, regardless 
-of its aims or representativeness of public concerns on the real world. 
+of its aims or representativeness of public concerns on the real world.
+The example in Figure~\ref{stc_chain} represents a perfect chain with bigram 
+origin node. The example is related to a well-known boycott campaign that 
+started early October 2016 against the Saudi Telecommunication Company (STC) ~\cite{naffee-2016}.
 On the other hand, when value of chain 
 likelihood is found 0, some perfect trend trees were identified. 
 Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}. 
@@ -419,6 +422,12 @@ chains that feature more specific topics or issues.
 \includegraphics[width=\columnwidth]{images/foreign_ministers_tree.png}
 \caption{Topic tree for foreign ministers trends}
 \label{fig:ministers_tree}
+\end{figure}
+
+\begin{figure}[htb] \centering
+\includegraphics[width=\columnwidth]{images/stc_chain.png}
+\caption{Topic chain for STC boycott trends}
+\label{fig:stc_chain}
 \end{figure}
 
 \subsection{Merging graphs: Country-Trend-Ngram}
