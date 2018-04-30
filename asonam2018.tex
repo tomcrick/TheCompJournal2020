@@ -198,7 +198,7 @@ In this graph each edge had a timestamp of the trend appearance, therefore the c
 \subsection{Derived Graph Construction: Weighted edges}
 
 This graph is generated from the base graph, following the algorithm 
-shown in Figure~\ref{fig:algorithm1}. It is a directed graph and that consists of two trend entities:
+shown in Table~\ref{tbl:algorithm1}. It is a directed graph and that consists of two trend entities:
 {\emph{place}} and {\emph{trend}}. Nodes represent places and
 trends, and are linked with {\emph{weighted}} edges. The feature 
 of weighted edges in this graph is used to measure the popularity 
@@ -207,11 +207,28 @@ of the engagement. Figure~\ref{fig:w_graph} shows an example
 of such graph.
 
 
-\begin{figure}[htb] \centering
-\includegraphics[width=\columnwidth]{images/algorithm1.png}
-\caption{Country-Trend weighted graph construction algorithm}
-\label{fig:algorithm1}
-\end{figure}
+\begin{table}
+\centering
+\begin{tabular}{l|l}
+\hline
+{\emph{1}} & weighted\_graph = empty\_graph()\\
+{\emph{2}} & \textbf{For} edge \textbf{in} base\_graph.edges():\\
+{\emph{3}} &  $\>\>\>\>$\textbf{if} weighted\_graph.has\_edge(country, trend):\\
+{\emph{4}} &  $\>\>\>\>\>\>\>\>$ edge\_weight+=1\\
+{\emph{5}} &  $\>\>\>\>$\textbf{else:}\\
+{\emph{6}} &  $\>\>\>\>\>\>\>\>$ add\_edge(country, trend)\\
+\hline
+\end{tabular}
+\caption{Trend-Ngram graph construction algorithm}
+\label{tbl:algorithm1}
+\end{table}
+
+
+%\begin{figure}[htb] \centering
+%\includegraphics[width=\columnwidth]{images/algorithm1.png}
+%\caption{Country-Trend weighted graph construction algorithm}
+%\label{fig:algorithm1}
+%\end{figure}
 
 
 \begin{figure}[htb] \centering
@@ -283,21 +300,6 @@ hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the
 graph shown in Figure~\ref{fig:tngraph}.
 
 
-\begin{table}[!h]
-\centering
-\begin{tabularx}{\columnwidth}{ll}
-\toprule
-{\emph{1}} & weighted\_graph = empty\_graph()\\
-{\emph{2}} & \textbf{For} edge \textbf{in} base\_graph.edges():\\
-{\emph{3}} &      if weighted\_graph.has\_edge(country, trend):\\
-{\emph{4}} &            edge\_weight+=1\\
-{\emph{5}} &      else:\\
-{\emph{6}} &            add\_edge(country, trend)\\
-\bottomrule
-\end{tabularx}
-\caption{Trend-Ngram graph construction algorithm}
-\label{tbl:algorithm2}
-\end{table}
 
 
 % \begin{figure}[htb] \centering
