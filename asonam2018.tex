@@ -275,18 +275,36 @@ spaces. Then, preserving the word order, the phrases were tokenised,
 and all possible ngrams then generated.  The original trend was
 connected to all of the ngrams generated, and an additional length
 attribute was added to each node within the graph, as shown in lines
-seven and nine in Figure~\ref{fig:algorithm2}. 
+seven and nine in 
+%Figure~\ref{fig:algorithm2}. 
 This attribute was used later in the
 analysis and the visualisation setting. Applying this algorithm to the
 hashtag '{\texttt{\#coffee\_international\_day}}' resulted in the
 graph shown in Figure~\ref{fig:tngraph}.
 
 
-\begin{figure}[htb] \centering
-\includegraphics[width=\columnwidth]{images/algorithm2.png}
+\begin{table}[!h]
+\centering
+\begin{tabularx}{\columnwidth}{ll}
+\toprule
+{\emph{1}} & weighted\_graph = empty\_graph()\\
+{\emph{2}} & \textbf{For} edge \textbf{in} base\_graph.edges():\\
+{\emph{3}} &      if weighted\_graph.has\_edge(country, trend):\\
+{\emph{4}} &            edge\_weight+=1\\
+{\emph{5}} &      else:\\
+{\emph{6}} &            add\_edge(country, trend)\\
+\bottomrule
+\end{tabularx}
 \caption{Trend-Ngram graph construction algorithm}
-\label{fig:algorithm2}
-\end{figure}
+\label{tbl:algorithm2}
+\end{table}
+
+
+% \begin{figure}[htb] \centering
+% \includegraphics[width=\columnwidth]{images/algorithm2.png}
+% \caption{Trend-Ngram graph construction algorithm}
+% \label{fig:algorithm2}
+% \end{figure}
 
 \begin{figure}[htb] \centering
 \includegraphics[width=\columnwidth]{images/trend_ngram_example.png}
