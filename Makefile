@@ -11,4 +11,4 @@ pdflatex = pdflatex -interaction=errorstopmode -halt-on-error
 	$(pdflatex) $<
 
 clean:
-	rm -f $(targets) *.aux *.log *.nav *.out *.snm *.toc *.vrb *.bbl *.synctex.gz
+	rm -f $(targets) *.aux *.log *.nav *.out *.snm *.toc *.vrb *.bbl *.blg *.synctex.gz
