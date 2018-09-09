@@ -1,10 +1,10 @@
-targets = asonam2018.pdf
+targets = frontiers2018.pdf
 
 all: $(targets)
 
 pdflatex = pdflatex -interaction=errorstopmode -halt-on-error
 
-%.pdf: %.tex asonam2018.bib
+%.pdf: %.tex frontiers2018.bib
 	$(pdflatex) $<
 	bibtex $*
 	$(pdflatex) $<
