@@ -1,2 +1,2 @@
-# FrontiersBigData2018
-Paper for Frontiers in Big Data journal
+# TheCompJournal2018
+Paper for The Computer Journal
