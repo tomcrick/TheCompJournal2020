@@ -1,10 +1,10 @@
-targets = thecompjournal2019.pdf
+targets = thecompjournal2020.pdf
 
 all: $(targets)
 
 pdflatex = pdflatex -interaction=errorstopmode -halt-on-error
 
-%.pdf: %.tex thecompjournal2019.bib
+%.pdf: %.tex thecompjournal2020.bib
 	$(pdflatex) $<
 	bibtex $*
 	$(pdflatex) $<
