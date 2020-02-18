@@ -63,7 +63,7 @@ This directed graph was constructed from raw data. The main use of this graph wa
 \end{figure}
 
 
-\subsection{Derived Graph Construction: Weighted edges}
+\subsection{Derived Graph: Country-Trend}
 
 This graph is generated from the base graph, following the algorithm shown in Table~\ref{tbl:algorithm1}. It is a directed graph and that consists of two trend entities: {\emph{place}} and {\emph{trend}}. Nodes represent places and trends, and are linked with {\emph{weighted}} edges. The feature of weighted edges in this graph is used to measure the popularity of trends, repetition rate, participation of countries, and the volume of the engagement. Figure~\ref{fig:w_graph} shows an example of such graph.
 
@@ -80,7 +80,7 @@ This graph is generated from the base graph, following the algorithm shown in Ta
 {\emph{6}} &  $\>\>\>\>\>\>\>\>$ add\_edge(country, trend)\\
 \hline
 \end{tabular}
-\caption{Trend-Ngram graph construction algorithm}
+\caption{Country-Trend graph construction algorithm}
 \label{tbl:algorithm1}
 \end{table}
 
@@ -165,7 +165,7 @@ A single odd case was found in which processing the trend’s text resulted in 1
 
 \subsection{Chain and Tree topics}
 
-Investigation of trend-ngram graph uncovered two special group of trends that appeared in form of trees and chains.  Each form features trends that relate to same ngram but longer by exactly one segment in terms of word numbers. This last segment is found to be the key to distinguish trend trees from chains. Last segments of all related trends are examined to confirm if they are digit or words. Then, chain likelihood is calculated by measuring the ratio of digits to words is measured.  For example, “{\texttt{\#Call\_for\_action\_1}}”, “{\texttt{\#Call\_For\_Action\_2}}”, and “{\texttt{\#Call\_for\_action\_3}}” form a trend chain and relate to the ngram “Call,For,Action”. An example of a trends tree graph would be the trends “russian\_foreign\_minister” and “american\_foreign\_minister” relating to ngram “foriegn,minister”. Indegree of the ngram indicates number of relating trends and measure length of the trend chain or number of topic branches. Having a perfect chain with high indegree is very likely to uncover well-planned ‘Twitter campaign’, regardless of its aims or representativeness of public concerns on the real world.  The example in Figure~\ref{fig:stc_chain} represents a perfect chain with bigram origin node. The example is related to a well-known boycott campaign that started early October 2016 against the Saudi Telecommunication Company (STC)~\cite{naffee-2016}.  On the other hand, when value of chain likelihood is found 0, some perfect trend trees were identified. Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}.  The core of the graph is the bigram ‘foreign,minister’, and is connected to 25 trends, such as ‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be seen, trend trees were found featuring more general topics compared to trend chains that feature more specific topics or issues.
+Investigation of trend-ngram graph uncovered two special group of trends that appeared in form of trees and chains.  Each form features trends that relate to same ngram but longer by exactly one segment in terms of word numbers. This last segment is found to be the key to distinguish trend trees from chains. Last segments of all related trends are examined to confirm if they are digit or words. Then, chain likelihood is calculated by measuring the ratio of digits to words.  For example, “{\texttt{\#Call\_for\_action\_1}}”, “{\texttt{\#Call\_For\_Action\_2}}”, and “{\texttt{\#Call\_for\_action\_3}}” form a trend chain and relate to the ngram “Call,For,Action”. An example of a trends tree graph would be the trends “russian\_foreign\_minister” and “american\_foreign\_minister” relating to ngram “foriegn,minister”. Indegree of the ngram indicates number of relating trends and measure length of the trend chain or number of topic branches. Having a perfect chain with high indegree is very likely to uncover well-planned ‘Twitter campaign’, regardless of its aims or representativeness of public concerns on the real world.  The example in Figure~\ref{fig:stc_chain} represents a perfect chain with bigram origin node. The example is related to a well-known boycott campaign that started early October 2016 against the Saudi Telecommunication Company (STC)~\cite{naffee-2016}.  On the other hand, when value of chain likelihood is found 0, some perfect trend trees were identified. Representation of a perfect trends tree is shown in Figure~\ref{fig:ministers_tree}.  The core of the graph is the bigram ‘foreign,minister’, and is connected to 25 trends, such as ‘saudi\_foreign\_minister’ and ‘iranian\_foreign\_minister’. As can be seen, trend trees were found featuring more general topics compared to trend chains that feature more specific topics or issues.
 
 \begin{figure*}[htb] \centering
 \includegraphics[width=0.7\textwidth]{images/foreign_ministers_tree.png}
